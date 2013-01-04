@@ -1,0 +1,26 @@
+-cp src
+	
+# Compile external SmartWorker subclass
+# Use convention of [SmartWorkerSubclassName].js in same dir as app.js
+# Use 'worker' flag to compile worker class
+	
+	-D worker
+	-D noEmbedJS
+	--dead-code-elimination
+	-js ../bin/SmartWorkerSubclass.js
+	-main SmartWorkerSubclass
+
+	--next
+
+# Compile main app
+	# force no worker for testing/sanity check
+	# -D force_no_worker
+	-js ../bin/SmartWorkerApp.js
+	-main Main
+
+# Web worker needs to be served over http to work. 
+# One option:
+# In Windows, copy bin files to local web server and view in Firefox
+
+	-cmd xcopy "..\bin" "C:\inetpub\wwwroot\sites\webworker" /E /I /Y /D 
+	-cmd firefox "http://localhost/sites/webworker/"
