@@ -22,5 +22,5 @@
 # One option:
 # In Windows, copy bin files to local web server and view in Firefox
 
-	-cmd xcopy "..\bin" "C:\inetpub\wwwroot\sites\webworker" /E /I /Y /D 
-	-cmd firefox "http://localhost/sites/webworker/"
+	# -cmd xcopy "..\bin" "C:\inetpub\wwwroot\sites\webworker" /E /I /Y /D 
+	# -cmd firefox "http://localhost/sites/webworker/"
